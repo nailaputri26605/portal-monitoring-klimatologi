@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Monitoring Klimatologi Indonesia</title>
+  <meta name="description" content="Portal monitoring klimatologi Indonesia - visualisasi peta dan Hovmöller.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">BMKG</div>
+      <div>
+        <div class="brand-title">PORTAL MONITORING KLIMATOLOGI</div>
+        <div class="brand-subtitle">Visualisasi Informasi Iklim Indonesia</div>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#monitoring">Monitoring</a>
+      <a href="#data">Data</a>
+      <a href="#informasi">Informasi</a>
+      <a href="#tentang">Tentang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">KLIMATOLOGI • MONITORING ATMOSFER</span>
+        <h1>Portal Monitoring<br><strong>Klimatologi Indonesia</strong></h1>
+        <p>Media visualisasi data klimatologi dalam bentuk peta dan diagram Hovmöller untuk membantu pemantauan kondisi atmosfer Indonesia.</p>
+        <a class="button" href="#monitoring">Lihat Monitoring</a>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">DATA TERSEDIA</div>
+        <div class="hero-number" id="totalPlots">100</div>
+        <div class="hero-caption">plot visualisasi</div>
+        <div class="mini-stats">
+          <span><b>2</b> parameter</span>
+          <span><b>2</b> tanggal</span>
+          <span><b>2</b> jenis visual</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="monitoring">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">MONITORING</span>
+          <h2>Visualisasi Klimatologi</h2>
+        </div>
+        <p>Gunakan filter untuk melihat gambar yang diberikan pembimbing berdasarkan jenis visualisasi, parameter, dan tanggal.</p>
+      </div>
+
+      <div class="filter-panel">
+        <label>Jenis visualisasi
+          <select id="typeFilter">
+            <option value="all">Semua</option>
+            <option value="Map">Map / Peta</option>
+            <option value="Hovmöller">Hovmöller</option>
+          </select>
+        </label>
+        <label>Parameter
+          <select id="parameterFilter">
+            <option value="all">Semua</option>
+            <option value="OLR">OLR</option>
+            <option value="PWAT">PWAT</option>
+          </select>
+        </label>
+        <label>Tanggal data
+          <select id="dateFilter">
+            <option value="all">Semua</option>
+            <option value="2026-10-04">4 Oktober 2026</option>
+            <option value="2026-10-03">3 Oktober 2026</option>
+          </select>
+        </label>
+        <label class="search-label">Cari
+          <input id="searchFilter" type="search" placeholder="misalnya: north, indonesia, 5 hari...">
+        </label>
+      </div>
+
+      <div class="result-info"><span id="resultCount">100</span> visualisasi ditemukan</div>
+      <div class="gallery" id="gallery"></div>
+      <div class="empty" id="emptyState" hidden>Tidak ada visualisasi yang sesuai dengan filter.</div>
+    </section>
+
+    <section class="section data-section" id="data">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">DATA</span>
+          <h2>Kategori Data</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="info-card">
+          <span class="card-icon">01</span>
+          <h3>Map / Peta</h3>
+          <p>Visualisasi spasial Indonesia untuk melihat distribusi parameter atmosfer dan hasil prakiraan.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-icon">02</span>
+          <h3>Hovmöller</h3>
+          <p>Visualisasi perubahan parameter terhadap waktu pada wilayah atau rentang lintang tertentu.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-icon">03</span>
+          <h3>Parameter OLR</h3>
+          <p>Outgoing Longwave Radiation (OLR) digunakan sebagai salah satu parameter dalam pemantauan atmosfer.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-icon">04</span>
+          <h3>Parameter PWAT</h3>
+          <p>Precipitable Water (PWAT) berkaitan dengan kandungan uap air yang dapat dipantau secara spasial dan temporal.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section explanation" id="informasi">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">INFORMASI</span>
+          <h2>Tentang Visualisasi</h2>
+        </div>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3>Map / Peta</h3>
+          <p>Bagian Map menampilkan visualisasi spasial yang berfokus pada wilayah Indonesia. File yang tersedia mencakup OLR dan PWAT dengan beberapa rentang prakiraan.</p>
+        </div>
+        <div>
+          <h3>Hovmöller</h3>
+          <p>Bagian Hovmöller mengelompokkan visualisasi berdasarkan wilayah lintang, misalnya ekuatorial, utara, selatan, serta rentang lintang tertentu.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="tentang">
+      <div class="about-box">
+        <span class="eyebrow">TENTANG PROJECT</span>
+        <h2>Portal Monitoring Klimatologi Indonesia</h2>
+        <p>Prototype website statis untuk kegiatan magang di bidang klimatologi. Struktur website dibuat dengan HTML, CSS, dan JavaScript sehingga dapat langsung digunakan pada GitHub Pages tanpa database.</p>
+        <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>BMKG • Portal Monitoring Klimatologi</strong><br><span>Prototype website statis untuk kegiatan magang.</span></div>
+    <div>Data visualisasi mengikuti file yang diberikan pembimbing.</div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-meta">
+        <div><span id="modalType"></span> · <span id="modalParameter"></span> · <span id="modalDate"></span></div>
+        <h3 id="modalTitle"></h3>
+        <p id="modalFilename"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
